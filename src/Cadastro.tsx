@@ -43,10 +43,17 @@ export default function Login() {
   ]
 
   function avancarSecao() {
-
-    setNumSecao(numSecao + 1)
-
+    if (numSecao < secoes.length - 1) {
+      setNumSecao(numSecao + 1)
+    }
   }
+
+  function voltarSecao() {
+    if (numSecao > 0) {
+      setNumSecao(numSecao - 1)
+    }
+  }
+
 
 
   return (
@@ -70,7 +77,10 @@ export default function Login() {
 
       </Box>
 
-      <Botao onPress={() => avancarSecao()}>Avançar</Botao>
+
+      {numSecao > 0 && <Botao onPress={() => voltarSecao()} bgColor={'gray.400'}>Voltar</Botao>}
+
+      <Botao onPress={() => avancarSecao()} mt={4}>Avançar</Botao>
 
 
 
