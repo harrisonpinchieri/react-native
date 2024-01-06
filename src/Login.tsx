@@ -2,6 +2,9 @@
 import { VStack, Image, Text, Box, FormControl, Input, Button, Link, } from 'native-base'
 import { TouchableOpacity } from 'react-native';
 import Logo from './assets/Logo.png'
+import { Titulo } from './componentes/Titulo';
+import { EntradaTexto } from './componentes/EntradaTexto';
+import { Botao } from './componentes/Botao';
 
 export default function Login() {
   return (
@@ -9,62 +12,38 @@ export default function Login() {
 
       <Image source={Logo} alt='Logo Voll' />
 
-      <Text
-        fontSize="2xl"
-        fontWeight='bold'
-        color='gray.500'
-        textAlign='center'
-        mt={5}
-      >
+      <Titulo >
         Faça login em sua conta
-      </Text>
+      </Titulo>
+
       <Box>
-        <FormControl mt={3}>
-          <FormControl.Label>Email</FormControl.Label>
-          <Input
-            placeholder='Insira seu endereço de e-mail'
-            size='lg'
-            w='100%'
-            borderRadius='lg'
-            bgColor='gray.100'>
 
-          </Input>
-        </FormControl>
+        <EntradaTexto
+          label='Email'
+          placeholder='insira seu endereço de email'
+        />
 
-        <FormControl mt={3}>
-          <FormControl.Label>Senha</FormControl.Label>
-          <Input
-            placeholder='Insira seu endereço de e-mail'
-            size='lg'
-            w='100%'
-            borderRadius='lg'
-            bgColor='gray.100'>
+        <EntradaTexto
+          label='Senha'
+          placeholder='insira sua senha'
 
-          </Input>
-        </FormControl>
+        />
+
       </Box>
 
-      <Button
-        w="100%"
-        bg="blue.800"
-        mt={10}
-        borderRadius='lg'
-      >
-        Entrar
-
-      </Button>
+      <Botao>Entrar</Botao>
 
       <Link
         href='https://www.alura.com.br'
-        mt={10}
+        mt={2}
       >
         Esqueceu a sua senha?
       </Link>
 
-      <Box w="100%" flexDirection='row' justifyContent="center">
+      <Box w="100%" flexDirection='row' justifyContent="center" mt={8}>
         <Text>Ainda não tem cadastro?</Text>
-        <TouchableOpacity>
-          <Text color="blue.500"> Faça seu cadastro</Text>
+        <TouchableOpacity >
+          <Text color="blue.500" > Faça seu cadastro</Text>
         </TouchableOpacity>
 
       </Box>
