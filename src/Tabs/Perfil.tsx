@@ -1,13 +1,28 @@
-import { VStack, Text } from "native-base"
+import { VStack, Text, ScrollView, Avatar, Divider } from "native-base"
+import { Titulo } from "../componentes/Titulo"
 
 export default function Perfil() {
     return (
 
-        <VStack>
+        <ScrollView flex={1}>
 
-            <Text>Perfil</Text>
+            <VStack flex={1} alignItems="center" p={5}>
+                <Titulo color="blue.500">Meu Perfil</Titulo>
 
-        </VStack>
+                <Avatar source={{ uri: "https://github.com/harrisonpinchieri.png" }} mt={5} size="xl" />
+
+
+                <Titulo color="blue.500">Informações pessoais</Titulo>
+                <Titulo fontSize={"lg"} mb={1} >Harrison Pinchieri</Titulo>
+                <Text>11/07/1991</Text>
+                <Text>São Paulo</Text>
+                <Divider mt={5} />
+
+                <Titulo color="blue.500">Histórico médico</Titulo>
+                <Text>Bronquite</Text>
+                <Text>Sinusite</Text>
+            </VStack>
+        </ScrollView>
 
     )
 }
