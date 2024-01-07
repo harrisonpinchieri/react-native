@@ -8,10 +8,10 @@ import { Botao } from './componentes/Botao';
 import { useState } from 'react';
 import { secoes } from './utils/CadastroEntradaTexto';
 
-export default function Login() {
+export default function Cadastro() {
   //utilizado para ter valores 
   const [numSecao, setNumSecao] = useState(0);
-  
+
 
   function avancarSecao() {
     if (numSecao < secoes.length - 1) {
@@ -30,14 +30,14 @@ export default function Login() {
   return (
     <ScrollView flex={1} >
 
-      <Image source={Logo} alt='Logo Voll'  alignSelf={'center'} mt={5}/>
+      <Image source={Logo} alt='Logo Voll' alignSelf={'center'} mt={5} />
 
 
       <Titulo >
         {secoes[numSecao].titulo}
       </Titulo>
 
-    
+
 
       <Box>
 
@@ -49,11 +49,11 @@ export default function Login() {
 
 
       </Box>
-      
+
       <Box>
         <Text color='blue.800' fontWeight='bold' fontSize={'md'} mt={2} mb={2}>
 
-        Selecione o Plano
+          Selecione o Plano
 
         </Text>
 
@@ -66,7 +66,7 @@ export default function Login() {
         }
 
 
-</Box>
+      </Box>
 
 
       {numSecao > 0 && <Botao onPress={() => voltarSecao()} bgColor={'gray.400'}>Voltar</Botao>}
