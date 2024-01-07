@@ -6,7 +6,7 @@ import { Titulo } from './componentes/Titulo';
 import { EntradaTexto } from './componentes/EntradaTexto';
 import { Botao } from './componentes/Botao';
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <VStack flex={1} alignItems="center" p={5} justifyContent='center'>
 
@@ -42,7 +42,7 @@ export default function Login() {
 
       <Box w="100%" flexDirection='row' justifyContent="center" mt={8}>
         <Text>Ainda não tem cadastro?</Text>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.navigate('Cadastro')} >
           <Text color="blue.500" > Faça seu cadastro</Text>
         </TouchableOpacity>
 
